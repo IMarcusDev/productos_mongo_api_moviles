@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectDB = async () => {
+const  connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/productos_db');
     console.log('Base de datos conectada exitosamente');
@@ -9,3 +9,5 @@ const connectDB = async () => {
     process.exit(1);
   }
 };
+
+module.exports = connectDB;
